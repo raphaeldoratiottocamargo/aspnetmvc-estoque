@@ -33,6 +33,14 @@ namespace CaelumEstoque.DAO
             }
         }
 
+        public CategoriaDoProduto BuscaPorNome(string nome)
+        {
+            using (var contexto = new EstoqueContext())
+            {
+                return contexto.Categorias.FirstOrDefault(c => c.Nome == nome);
+            }
+        }
+
         public void Atualiza(CategoriaDoProduto categoria)
         {
             using (var contexto = new EstoqueContext())
